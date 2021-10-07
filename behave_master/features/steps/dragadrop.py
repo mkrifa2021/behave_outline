@@ -5,7 +5,7 @@ from selenium.webdriver import ActionChains
 
 @given(u'The user is on the dragadrop home page')
 def step_impl(context):
-    context.driver = webdriver.Chrome('c:\driver\chromedriver.exe')
+    context.driver= webdriver.Chrome('c:\driver\chromedriver.exe')
     driver=context.driver
     driver.get("https://qavbox.github.io/demo/dragndrop/")
 
