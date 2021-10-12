@@ -3,8 +3,7 @@ import os
 from allure_commons._allure import attach
 from allure_commons.types import AttachmentType
 from selenium import webdriver
-
-from pages.drag_drop import drag_drop
+from pages.login_page import login_page
 
 def before_scenario(context,scenario):
     dir = os.getcwd()
@@ -12,8 +11,9 @@ def before_scenario(context,scenario):
     #option.add_argument("--start-maximized")
     option.add_argument("headless")
     config_file = "\config_files\chromedriver.exe"
-    context.browser = webdriver.Chrome(executable_path=dir + config_file,chrome_options=option)
-    context.dd=drag_drop(context.browser)
+    context.browser = webdriver.Chrome(executable_path=dir + config_file, chrome_options=option)
+    #context.browser = webdriver.Chrome(executable_path=dir + config_file)
+    context.dd=login_page(context.browser)
 
 def after_scenario(context,scenario):
     context.browser.quit()
