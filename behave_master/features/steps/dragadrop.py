@@ -16,6 +16,3 @@ def step_impl(context):
 def step_impl(context):
         msg=context.dd.msg_box()
         assert_equal(msg,expected_result)
-
-
-
